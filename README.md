@@ -17,7 +17,7 @@ TickerLite 是一个极简的金融行情软件，遵循"功能极简+资源零�
 - **QCustomPlot**：轻量级开源图表库
 - **SQLite**：Qt 内置支持的数据存储
 - **Qt Network**：内置网络通信模块
-- **腾讯行情接口**：免费公开数据源 (http://qt.gtimg.cn/q=)
+- **腾讯行情接口**：免费公开数据源[链接](http://qt.gtimg.cn/q=)
 
 ## 构建说明
 
