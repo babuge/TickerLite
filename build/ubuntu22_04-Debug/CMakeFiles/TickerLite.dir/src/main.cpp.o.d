@@ -379,4 +379,8 @@ CMakeFiles/TickerLite.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QButtonGroup \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qbuttongroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QReadWriteLock \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qreadwritelock.h

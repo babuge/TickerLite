@@ -70,8 +70,8 @@ CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Co
 CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/qt5/bin/moc
 CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.15.13
 CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
-CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/qt5/bin/uic
 CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Sql.so.5.15.13
+CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/qt5/bin/uic
 CMakeFiles/TickerLite_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.15.13
 
 TickerLite_autogen_timestamp_deps: CMakeFiles/TickerLite_autogen_timestamp_deps

@@ -12,6 +12,8 @@
 #include <QJsonArray>
 #include <QMouseEvent>
 #include <QPoint>
+#include <QButtonGroup>
+#include <QReadWriteLock>
 
 // 前向声明 QCustomPlot，避免包含整个头文件
 class QCustomPlot;
@@ -45,7 +47,7 @@ private:
     void setupUI();
     void initializeTable();
     void initializeChart();
-    void updateChart(const QVector<double>& timestamps, const QVector<double>& prices);
+    void updateChart();
 
     // 鼠标事件处理
     void mousePressEvent(QMouseEvent *event) override;
@@ -65,6 +67,7 @@ private:
     QHBoxLayout *m_titleLayout;   // 标题栏布局
     QTableWidget *m_tableWidget;
     QCustomPlot *m_chartWidget;
+    QButtonGroup *m_groupBtn;
     QPushButton *m_historyButton;
     QPushButton *m_refreshButton;
     QLabel *m_statusLabel;
@@ -88,6 +91,20 @@ private:
     // 主题相关
     bool m_isDarkTheme;
     ThemeManager* m_themeManager;
+
+    class PrivateDatas {
+    public:
+        PrivateDatas();
+        QReadWriteLock lock;
+        QVector<double> timestamps;
+        QVector<double> prices;
+        void Update(double, double);
+        bool HasTimestamp(double);
+    private:
+        const int maxSize = 150;
+    };
+    friend class PrivateDatas;
+    PrivateDatas m_datas;
 };
 
 #endif // MAINWINDOW_H

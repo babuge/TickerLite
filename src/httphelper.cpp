@@ -65,12 +65,6 @@ QString HttpHelper::parseSinaData(const QString &rawData, const QString &stockCo
     double change = items[33].toDouble();
     double changePercent = items[34].toDouble();
     qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
-    // 保存到SQLite数据库
-    DatabaseHelper::instance().saveStockData(
-        stockCode, name, price, prevClose, change, 
-        changePercent, items[5].toDouble(), items[6], 
-        items[7], items[8], timestamp
-    );
 
     // 格式化结果
     // 返回：名称|当前价|涨跌额|涨跌幅|昨收价|开盘价|成交量|外盘|内盘

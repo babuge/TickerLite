@@ -124,6 +124,7 @@ void MainWindow::setupUI()
     // 创建控制布局
     m_controlLayout = new QHBoxLayout();
 
+    m_groupBtn = new QButtonGroup(this);
     // 历史数据
     m_historyButton = new QPushButton("历史", this);
     connect(m_historyButton, &QPushButton::clicked, this, &MainWindow::historyData);
@@ -131,6 +132,9 @@ void MainWindow::setupUI()
     // 创建刷新按钮
     m_refreshButton = new QPushButton("刷新", this);
     connect(m_refreshButton, &QPushButton::clicked, this, &MainWindow::refreshData);
+
+    m_groupBtn->addButton(m_historyButton);
+    m_groupBtn->addButton(m_refreshButton);
 
     // 创建状态标签
     m_statusLabel = new QLabel("准备就绪", this);
@@ -265,15 +269,6 @@ void MainWindow::historyData()
         return;
     }
 
-    if (m_refreshTimer && m_refreshTimer->isActive())
-    {
-        m_refreshTimer->stop();
-    }
-    
-    // 准备数据
-    QVector<double> timestamps;
-    QVector<double> prices;
-    
     // 数据已经按时间顺序排列，直接使用
     for (const auto &record : historyData) {
         // 获取时间戳并转换为秒
@@ -282,12 +277,14 @@ void MainWindow::historyData()
         // 获取价格
         double price = record["price"].toDouble();
         
-        timestamps.append(timestampSec);
-        prices.append(price);
+        if (!m_datas.HasTimestamp(timestampSec))
+        {
+            m_datas.Update(timestampSec, price);
+        }
     }
     
     // 更新图表
-    updateChart(timestamps, prices);
+    updateChart();
     
     // 更新状态标签
     m_statusLabel->setText(QString("已加载 %1 的历史数据").arg(stockCode));
@@ -295,13 +292,6 @@ void MainWindow::historyData()
 
 void MainWindow::refreshData()
 {
-    if (sender() == m_refreshButton)
-    {
-        if (m_refreshTimer && !m_refreshTimer->isActive())
-        {
-            m_refreshTimer->start(2000);
-        }
-    }
     m_statusLabel->setText("正在刷新数据...");
     // 遍历所有股票代码，请求数据
     for (const QString &code : m_stockCodes) {
@@ -350,7 +340,7 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply)
 
     if (!parsedData.isEmpty()) {
         QStringList parts = parsedData.split("|");
-        if (parts.size() >= 9) {
+        if (parts.size() > 9) {
             QString name = parts[0];
             QString price = parts[1];
             QString change = parts[2];
@@ -361,6 +351,12 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply)
             QString outerDisc = parts[7];
             QString innerDisc = parts[8];
             QString timestamp = parts[9];
+            // 保存到SQLite数据库
+            DatabaseHelper::instance().saveStockData(
+                code, name, price.toDouble(), prevClose.toDouble(), change.toDouble(),
+                changePercent.toDouble(), openPrice.toDouble(),
+                volume, outerDisc, innerDisc, timestamp.toLongLong()
+            );
 
             // 找到对应的行
             int row = m_stockCodes.indexOf(code);
@@ -393,25 +389,17 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply)
 
                 // 更新图表（以第一个股票为例）
                 if (row == 0) {
-                    // 模拟历史数据点
-                    static QVector<double> timestamps;
-                    static QVector<double> prices;
-
                     // 添加新数据点
                     double currentTime = timestamp.toLongLong() / 1000.0;
                     double currentPrice = price.toDouble();
 
-                    timestamps.append(currentTime);
-                    prices.append(currentPrice);
-
-                    // 保持最多显示100个数据点
-                    while (timestamps.size() > 100) {
-                        timestamps.removeFirst();
-                        prices.removeFirst();
+                    if (!m_datas.HasTimestamp(currentTime))
+                    {
+                        m_datas.Update(currentTime, currentPrice);
                     }
 
                     // 更新图表
-                    updateChart(timestamps, prices);
+                    updateChart();
                 }
             }
         }
@@ -526,27 +514,28 @@ void MainWindow::applyTheme(bool isDark)
     m_themeManager->updateWidgetStyle(m_chartWidget);
 }
 
-void MainWindow::updateChart(const QVector<double>& timestamps, const QVector<double>& prices)
+void MainWindow::updateChart()
 {
-    if (timestamps.isEmpty() || prices.isEmpty()) {
+    QReadLocker rlock(&m_datas.lock);
+    if (m_datas.timestamps.isEmpty() || m_datas.prices.isEmpty()) {
         return;
     }
 
     // 更新图表数据
-    m_chartWidget->graph(0)->setData(timestamps, prices);
+    m_chartWidget->graph(0)->setData(m_datas.timestamps, m_datas.prices);
 
     // 调整坐标轴范围
-    if (timestamps.size() > 1) {
-        double minTime = timestamps.first();
-        double maxTime = timestamps.last();
+    if (m_datas.timestamps.size() > 1) {
+        double minTime = m_datas.timestamps.first();
+        double maxTime = m_datas.timestamps.last();
         double timeRange = maxTime - minTime;
 
         // 扩展范围以留出边距
         m_chartWidget->xAxis->setRange(minTime - timeRange * 0.1, maxTime + timeRange * 0.1);
 
         // 计算价格范围
-        double minPrice = *std::min_element(prices.begin(), prices.end());
-        double maxPrice = *std::max_element(prices.begin(), prices.end());
+        double minPrice = *std::min_element(m_datas.prices.begin(), m_datas.prices.end());
+        double maxPrice = *std::max_element(m_datas.prices.begin(), m_datas.prices.end());
         double priceRange = maxPrice - minPrice;
 
         // 扩展范围以留出边距
@@ -633,3 +622,36 @@ void MainWindow::toggleTheme()
     applyTheme(m_isDarkTheme);
 }
 
+MainWindow::PrivateDatas::PrivateDatas()
+{
+    timestamps.reserve(maxSize);
+    prices.reserve(maxSize);
+}
+
+void MainWindow::PrivateDatas::Update(double timestamp, double price)
+{
+    QWriteLocker wLock(&lock);
+    if (timestamps.isEmpty() || timestamp > timestamps.last())
+    {
+        timestamps.push_back(timestamp);
+        prices.push_back(price);
+        if (timestamps.size() > maxSize)
+        {
+            timestamps.removeFirst();
+            prices.removeFirst();
+        }
+    }
+
+}
+bool MainWindow::PrivateDatas::HasTimestamp(double timestamp)
+{
+    QReadLocker wLock(&lock);
+    auto item = std::find_if(timestamps.cbegin(), timestamps.cend(), [timestamp](const double &a){
+        return (a == timestamp);
+    });
+    if (item != timestamps.cend())
+    {
+        return true;
+    }
+    return false;
+}

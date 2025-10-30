@@ -301,6 +301,7 @@ TickerLite_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QPointF \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QPointer \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QReadWriteLock \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QRect \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QScopedPointer \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QSharedDataPointer \
@@ -677,6 +678,7 @@ TickerLite_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtSql/qtsql-config.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlglobal.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QButtonGroup \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCommonStyle \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \

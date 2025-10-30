@@ -375,6 +375,10 @@ CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QButtonGroup \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qbuttongroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QReadWriteLock \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qreadwritelock.h \
  /home/babuge/develop/TickerLite/include/httphelper.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkRequest \
@@ -630,7 +634,6 @@ CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o: \
  /usr/include/c++/13/random /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qreadwritelock.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
@@ -850,7 +853,6 @@ CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qaction.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qbuttongroup.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcalendarwidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcolordialog.h \
