@@ -203,6 +203,30 @@ qrc_resources.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TickerLite.dir/build.make CMakeFiles/TickerLite.dir/qrc_resources.cpp.s
 .PHONY : qrc_resources.cpp.s
 
+src/databasehelper.o: src/databasehelper.cpp.o
+.PHONY : src/databasehelper.o
+
+# target to build an object file
+src/databasehelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TickerLite.dir/build.make CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o
+.PHONY : src/databasehelper.cpp.o
+
+src/databasehelper.i: src/databasehelper.cpp.i
+.PHONY : src/databasehelper.i
+
+# target to preprocess a source file
+src/databasehelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TickerLite.dir/build.make CMakeFiles/TickerLite.dir/src/databasehelper.cpp.i
+.PHONY : src/databasehelper.cpp.i
+
+src/databasehelper.s: src/databasehelper.cpp.s
+.PHONY : src/databasehelper.s
+
+# target to generate assembly for a file
+src/databasehelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TickerLite.dir/build.make CMakeFiles/TickerLite.dir/src/databasehelper.cpp.s
+.PHONY : src/databasehelper.cpp.s
+
 src/httphelper.o: src/httphelper.cpp.o
 .PHONY : src/httphelper.o
 
@@ -340,6 +364,9 @@ help:
 	@echo "... qrc_resources.o"
 	@echo "... qrc_resources.i"
 	@echo "... qrc_resources.s"
+	@echo "... src/databasehelper.o"
+	@echo "... src/databasehelper.i"
+	@echo "... src/databasehelper.s"
 	@echo "... src/httphelper.o"
 	@echo "... src/httphelper.i"
 	@echo "... src/httphelper.s"

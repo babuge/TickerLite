@@ -33,6 +33,7 @@ public:
     ~MainWindow();
 
 private slots:
+    void historyData();
     void refreshData();
     void onNetworkReplyFinished(QNetworkReply* reply);
     void onMinimizeButtonClicked();
@@ -64,6 +65,7 @@ private:
     QHBoxLayout *m_titleLayout;   // 标题栏布局
     QTableWidget *m_tableWidget;
     QCustomPlot *m_chartWidget;
+    QPushButton *m_historyButton;
     QPushButton *m_refreshButton;
     QLabel *m_statusLabel;
     QLabel *m_titleLabel;         // 标题标签

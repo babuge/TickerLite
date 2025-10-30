@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 查找Qt5组件
-find_package(Qt5 REQUIRED COMPONENTS Core Widgets Network PrintSupport)
+find_package(Qt5 REQUIRED COMPONENTS Core Widgets Network PrintSupport Sql)
 
 # 设置Qt5的MOC、UIC和RCC自动处理
 set(CMAKE_AUTOMOC ON)
@@ -42,6 +42,7 @@ target_link_libraries(TickerLite
     Qt5::Widgets
     Qt5::Network
     Qt5::PrintSupport
+    Qt5::Sql
 )
 
 # 设置Windows子系统

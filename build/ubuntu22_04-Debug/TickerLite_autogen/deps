@@ -4,11 +4,13 @@ TickerLite_autogen/timestamp: \
 	/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake \
 	/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles/3.28.3/CMakeSystem.cmake \
 	/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/TickerLite_autogen/moc_predefs.h \
+	/home/babuge/develop/TickerLite/include/databasehelper.h \
 	/home/babuge/develop/TickerLite/include/httphelper.h \
 	/home/babuge/develop/TickerLite/include/mainwindow.h \
 	/home/babuge/develop/TickerLite/include/qcustomplot.h \
 	/home/babuge/develop/TickerLite/include/thememanager.h \
 	/home/babuge/develop/TickerLite/resources/resources.qrc \
+	/home/babuge/develop/TickerLite/src/databasehelper.cpp \
 	/home/babuge/develop/TickerLite/src/httphelper.cpp \
 	/home/babuge/develop/TickerLite/src/main.cpp \
 	/home/babuge/develop/TickerLite/src/mainwindow.cpp \
@@ -666,6 +668,14 @@ TickerLite_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport/qtprintsupport-config.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport/qtprintsupportglobal.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport/qtprintsupportversion.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlError \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlQuery \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/qsqldatabase.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/qsqlerror.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/qsqlquery.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/qtsql-config.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlglobal.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCommonStyle \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
@@ -856,6 +866,8 @@ TickerLite_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupport_QCupsPrinterSupportPlugin.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfig.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \

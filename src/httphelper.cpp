@@ -1,5 +1,6 @@
 
 #include "httphelper.h"
+#include "databasehelper.h"
 #include <QDebug>
 
 HttpHelper::HttpHelper(QObject *parent)
@@ -63,10 +64,17 @@ QString HttpHelper::parseSinaData(const QString &rawData, const QString &stockCo
     double prevClose = items[4].toDouble();
     double change = items[33].toDouble();
     double changePercent = items[34].toDouble();
+    qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+    // 保存到SQLite数据库
+    DatabaseHelper::instance().saveStockData(
+        stockCode, name, price, prevClose, change, 
+        changePercent, items[5].toDouble(), items[6], 
+        items[7], items[8], timestamp
+    );
 
     // 格式化结果
     // 返回：名称|当前价|涨跌额|涨跌幅|昨收价|开盘价|成交量|外盘|内盘
-    return QString("%1|%2|%3|%4|%5|%6|%7|%8|%9")
+    return QString("%1|%2|%3|%4|%5|%6|%7|%8|%9|%10")
            .arg(name)
            .arg(price, 0, 'f', 2)
            .arg(change, 0, 'f', 2)
@@ -75,7 +83,8 @@ QString HttpHelper::parseSinaData(const QString &rawData, const QString &stockCo
            .arg(items[5].toDouble(), 0, 'f', 2)  // 开盘价
            .arg(items[6])  // 成交量
            .arg(items[7])  // 外盘
-           .arg(items[8]); // 内盘
+           .arg(items[8])  // 内盘
+           .arg(timestamp);
 }
 
 QJsonObject HttpHelper::parseJsonData(const QString &jsonData)

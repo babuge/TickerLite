@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "TickerLite_autogen/timestamp" "custom" "TickerLite_autogen/deps"
   "/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/TickerLite_autogen/mocs_compilation.cpp" "CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.o.d"
   "/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/qrc_resources.cpp" "CMakeFiles/TickerLite.dir/qrc_resources.cpp.o" "gcc" "CMakeFiles/TickerLite.dir/qrc_resources.cpp.o.d"
+  "/home/babuge/develop/TickerLite/src/databasehelper.cpp" "CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o" "gcc" "CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o.d"
   "/home/babuge/develop/TickerLite/src/httphelper.cpp" "CMakeFiles/TickerLite.dir/src/httphelper.cpp.o" "gcc" "CMakeFiles/TickerLite.dir/src/httphelper.cpp.o.d"
   "/home/babuge/develop/TickerLite/src/main.cpp" "CMakeFiles/TickerLite.dir/src/main.cpp.o" "gcc" "CMakeFiles/TickerLite.dir/src/main.cpp.o.d"
   "/home/babuge/develop/TickerLite/src/mainwindow.cpp" "CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o" "gcc" "CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o.d"

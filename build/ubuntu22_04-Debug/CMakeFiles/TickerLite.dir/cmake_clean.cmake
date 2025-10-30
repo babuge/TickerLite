@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/TickerLite.dir/qrc_resources.cpp.o"
   "CMakeFiles/TickerLite.dir/qrc_resources.cpp.o.d"
+  "CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o"
+  "CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o.d"
   "CMakeFiles/TickerLite.dir/src/httphelper.cpp.o"
   "CMakeFiles/TickerLite.dir/src/httphelper.cpp.o.d"
   "CMakeFiles/TickerLite.dir/src/main.cpp.o"

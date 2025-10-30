@@ -97,10 +97,24 @@ CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.s"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/TickerLite_autogen/mocs_compilation.cpp -o CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.s
 
+CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o: CMakeFiles/TickerLite.dir/flags.make
+CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o: /home/babuge/develop/TickerLite/src/databasehelper.cpp
+CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o"
+	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o -MF CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o.d -o CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o -c /home/babuge/develop/TickerLite/src/databasehelper.cpp
+
+CMakeFiles/TickerLite.dir/src/databasehelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TickerLite.dir/src/databasehelper.cpp.i"
+	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/babuge/develop/TickerLite/src/databasehelper.cpp > CMakeFiles/TickerLite.dir/src/databasehelper.cpp.i
+
+CMakeFiles/TickerLite.dir/src/databasehelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TickerLite.dir/src/databasehelper.cpp.s"
+	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/babuge/develop/TickerLite/src/databasehelper.cpp -o CMakeFiles/TickerLite.dir/src/databasehelper.cpp.s
+
 CMakeFiles/TickerLite.dir/src/httphelper.cpp.o: CMakeFiles/TickerLite.dir/flags.make
 CMakeFiles/TickerLite.dir/src/httphelper.cpp.o: /home/babuge/develop/TickerLite/src/httphelper.cpp
 CMakeFiles/TickerLite.dir/src/httphelper.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TickerLite.dir/src/httphelper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TickerLite.dir/src/httphelper.cpp.o"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/src/httphelper.cpp.o -MF CMakeFiles/TickerLite.dir/src/httphelper.cpp.o.d -o CMakeFiles/TickerLite.dir/src/httphelper.cpp.o -c /home/babuge/develop/TickerLite/src/httphelper.cpp
 
 CMakeFiles/TickerLite.dir/src/httphelper.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/TickerLite.dir/src/httphelper.cpp.s: cmake_force
 CMakeFiles/TickerLite.dir/src/main.cpp.o: CMakeFiles/TickerLite.dir/flags.make
 CMakeFiles/TickerLite.dir/src/main.cpp.o: /home/babuge/develop/TickerLite/src/main.cpp
 CMakeFiles/TickerLite.dir/src/main.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TickerLite.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TickerLite.dir/src/main.cpp.o"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/src/main.cpp.o -MF CMakeFiles/TickerLite.dir/src/main.cpp.o.d -o CMakeFiles/TickerLite.dir/src/main.cpp.o -c /home/babuge/develop/TickerLite/src/main.cpp
 
 CMakeFiles/TickerLite.dir/src/main.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/TickerLite.dir/src/main.cpp.s: cmake_force
 CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o: CMakeFiles/TickerLite.dir/flags.make
 CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o: /home/babuge/develop/TickerLite/src/mainwindow.cpp
 CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o -MF CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o.d -o CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o -c /home/babuge/develop/TickerLite/src/mainwindow.cpp
 
 CMakeFiles/TickerLite.dir/src/mainwindow.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/TickerLite.dir/src/mainwindow.cpp.s: cmake_force
 CMakeFiles/TickerLite.dir/src/thememanager.cpp.o: CMakeFiles/TickerLite.dir/flags.make
 CMakeFiles/TickerLite.dir/src/thememanager.cpp.o: /home/babuge/develop/TickerLite/src/thememanager.cpp
 CMakeFiles/TickerLite.dir/src/thememanager.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TickerLite.dir/src/thememanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TickerLite.dir/src/thememanager.cpp.o"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/src/thememanager.cpp.o -MF CMakeFiles/TickerLite.dir/src/thememanager.cpp.o.d -o CMakeFiles/TickerLite.dir/src/thememanager.cpp.o -c /home/babuge/develop/TickerLite/src/thememanager.cpp
 
 CMakeFiles/TickerLite.dir/src/thememanager.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/TickerLite.dir/src/thememanager.cpp.s: cmake_force
 CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o: CMakeFiles/TickerLite.dir/flags.make
 CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o: /home/babuge/develop/TickerLite/src/third_party/qcustomplot.cpp
 CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o -MF CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o.d -o CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.o -c /home/babuge/develop/TickerLite/src/third_party/qcustomplot.cpp
 
 CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/TickerLite.dir/src/third_party/qcustomplot.cpp.s: cmake_force
 CMakeFiles/TickerLite.dir/qrc_resources.cpp.o: CMakeFiles/TickerLite.dir/flags.make
 CMakeFiles/TickerLite.dir/qrc_resources.cpp.o: qrc_resources.cpp
 CMakeFiles/TickerLite.dir/qrc_resources.cpp.o: CMakeFiles/TickerLite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TickerLite.dir/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TickerLite.dir/qrc_resources.cpp.o"
 	/usr/bin/g++ --sysroot=/ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TickerLite.dir/qrc_resources.cpp.o -MF CMakeFiles/TickerLite.dir/qrc_resources.cpp.o.d -o CMakeFiles/TickerLite.dir/qrc_resources.cpp.o -c /home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/qrc_resources.cpp
 
 CMakeFiles/TickerLite.dir/qrc_resources.cpp.i: cmake_force
@@ -184,6 +198,7 @@ CMakeFiles/TickerLite.dir/qrc_resources.cpp.s: cmake_force
 # Object files for target TickerLite
 TickerLite_OBJECTS = \
 "CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o" \
 "CMakeFiles/TickerLite.dir/src/httphelper.cpp.o" \
 "CMakeFiles/TickerLite.dir/src/main.cpp.o" \
 "CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o" \
@@ -195,6 +210,7 @@ TickerLite_OBJECTS = \
 TickerLite_EXTERNAL_OBJECTS =
 
 TickerLite: CMakeFiles/TickerLite.dir/TickerLite_autogen/mocs_compilation.cpp.o
+TickerLite: CMakeFiles/TickerLite.dir/src/databasehelper.cpp.o
 TickerLite: CMakeFiles/TickerLite.dir/src/httphelper.cpp.o
 TickerLite: CMakeFiles/TickerLite.dir/src/main.cpp.o
 TickerLite: CMakeFiles/TickerLite.dir/src/mainwindow.cpp.o
@@ -204,11 +220,12 @@ TickerLite: CMakeFiles/TickerLite.dir/qrc_resources.cpp.o
 TickerLite: CMakeFiles/TickerLite.dir/build.make
 TickerLite: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.15.13
 TickerLite: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.15.13
+TickerLite: /usr/lib/x86_64-linux-gnu/libQt5Sql.so.5.15.13
 TickerLite: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
 TickerLite: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13
 TickerLite: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13
 TickerLite: CMakeFiles/TickerLite.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable TickerLite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable TickerLite"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TickerLite.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

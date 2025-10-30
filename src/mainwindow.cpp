@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "httphelper.h"
 #include "thememanager.h"
+#include "databasehelper.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -34,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_titleLayout(nullptr)
     , m_tableWidget(nullptr)
     , m_chartWidget(nullptr)
+    , m_historyButton(nullptr)
     , m_refreshButton(nullptr)
     , m_statusLabel(nullptr)
     , m_titleLabel(nullptr)
@@ -56,6 +58,9 @@ MainWindow::MainWindow(QWidget *parent)
     // 设置定时器
     connect(m_refreshTimer, &QTimer::timeout, this, &MainWindow::refreshData);
     m_refreshTimer->start(2000); // 每2秒刷新一次
+
+    // 加载历史数据
+    historyData();
 
     // 初始刷新数据
     refreshData();
@@ -119,6 +124,10 @@ void MainWindow::setupUI()
     // 创建控制布局
     m_controlLayout = new QHBoxLayout();
 
+    // 历史数据
+    m_historyButton = new QPushButton("历史", this);
+    connect(m_historyButton, &QPushButton::clicked, this, &MainWindow::historyData);
+
     // 创建刷新按钮
     m_refreshButton = new QPushButton("刷新", this);
     connect(m_refreshButton, &QPushButton::clicked, this, &MainWindow::refreshData);
@@ -128,6 +137,7 @@ void MainWindow::setupUI()
     m_statusLabel->setObjectName("statusLabel");
 
     // 添加控件到控制布局
+    m_controlLayout->addWidget(m_historyButton);
     m_controlLayout->addWidget(m_refreshButton);
     m_controlLayout->addWidget(m_statusLabel);
     m_controlLayout->addStretch();
@@ -231,8 +241,67 @@ void MainWindow::initializeChart()
     m_chartWidget->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 }
 
+void MainWindow::historyData()
+{
+    // 默认查询sh600000股票过去5分钟的历史数据
+    QString stockCode = "sh600000";
+    
+    // 确保数据库已初始化
+    if (!DatabaseHelper::instance().initializeDatabase()) {
+        m_statusLabel->setText("数据库初始化失败");
+        return;
+    }
+    
+    // 计算过去5分钟的时间范围
+    QDateTime endTime = QDateTime::currentDateTime();
+    QDateTime startTime = endTime.addSecs(-300); // 5分钟 = 300秒
+    
+    // 从数据库查询历史数据
+    QList<QVariantMap> historyData = DatabaseHelper::instance().getStockHistory(stockCode, startTime, endTime);
+    
+    if (historyData.isEmpty()) {
+        qDebug() << "没有找到历史数据:" << stockCode;
+        m_statusLabel->setText(QString("没有找到 %1 的历史数据").arg(stockCode));
+        return;
+    }
+
+    if (m_refreshTimer && m_refreshTimer->isActive())
+    {
+        m_refreshTimer->stop();
+    }
+    
+    // 准备数据
+    QVector<double> timestamps;
+    QVector<double> prices;
+    
+    // 数据已经按时间顺序排列，直接使用
+    for (const auto &record : historyData) {
+        // 获取时间戳并转换为秒
+        double timestampSec = record["timestamp"].toLongLong() / 1000.0;
+        
+        // 获取价格
+        double price = record["price"].toDouble();
+        
+        timestamps.append(timestampSec);
+        prices.append(price);
+    }
+    
+    // 更新图表
+    updateChart(timestamps, prices);
+    
+    // 更新状态标签
+    m_statusLabel->setText(QString("已加载 %1 的历史数据").arg(stockCode));
+}
+
 void MainWindow::refreshData()
 {
+    if (sender() == m_refreshButton)
+    {
+        if (m_refreshTimer && !m_refreshTimer->isActive())
+        {
+            m_refreshTimer->start(2000);
+        }
+    }
     m_statusLabel->setText("正在刷新数据...");
     // 遍历所有股票代码，请求数据
     for (const QString &code : m_stockCodes) {
@@ -291,6 +360,7 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply)
             QString volume = parts[6];
             QString outerDisc = parts[7];
             QString innerDisc = parts[8];
+            QString timestamp = parts[9];
 
             // 找到对应的行
             int row = m_stockCodes.indexOf(code);
@@ -305,7 +375,7 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply)
                 m_tableWidget->setItem(row, 7, new QTableWidgetItem(volume));
                 m_tableWidget->setItem(row, 8, new QTableWidgetItem(outerDisc));
                 m_tableWidget->setItem(row, 9, new QTableWidgetItem(innerDisc));
-                m_tableWidget->setItem(row, 10, new QTableWidgetItem(QDateTime::currentDateTime().toString("hh:mm:ss")));
+                m_tableWidget->setItem(row, 10, new QTableWidgetItem(QDateTime::fromMSecsSinceEpoch(timestamp.toLongLong()).toString("hh:mm:ss")));
 
                 // 根据涨跌设置颜色
                 double changeValue = change.toDouble();
@@ -328,7 +398,7 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply)
                     static QVector<double> prices;
 
                     // 添加新数据点
-                    double currentTime = QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000.0;
+                    double currentTime = timestamp.toLongLong() / 1000.0;
                     double currentPrice = price.toDouble();
 
                     timestamps.append(currentTime);
@@ -445,6 +515,9 @@ void MainWindow::applyTheme(bool isDark)
     
     // 更新状态标签样式
     m_themeManager->updateWidgetStyle(m_statusLabel);
+    
+    // 更新历史数据按钮样式
+    m_themeManager->updateWidgetStyle(m_historyButton);
     
     // 更新主窗口样式
     m_themeManager->updateWidgetStyle(this);

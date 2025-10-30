@@ -76,6 +76,8 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupport_QCupsPrinterSupportPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfig.cmake",
 		"/home/babuge/develop/TickerLite/resources/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/babuge/develop/TickerLite",
@@ -83,6 +85,12 @@
 	"DEP_FILE_RULE_NAME" : "TickerLite_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"/home/babuge/develop/TickerLite/include/databasehelper.h",
+			"MU",
+			"6YEA5652QU/moc_databasehelper.cpp",
+			null
+		],
 		[
 			"/home/babuge/develop/TickerLite/include/httphelper.h",
 			"MU",
@@ -117,6 +125,7 @@
 		"QT_GUI_LIB",
 		"QT_NETWORK_LIB",
 		"QT_PRINTSUPPORT_LIB",
+		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB"
 	],
 	"MOC_DEPEND_FILTERS" : 
@@ -137,6 +146,7 @@
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
 		"/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport",
+		"/usr/include/x86_64-linux-gnu/qt5/QtSql",
 		"/usr/include/c++/13",
 		"/usr/include/x86_64-linux-gnu/c++/13",
 		"/usr/include/c++/13/backward",
@@ -173,6 +183,7 @@
 	"SETTINGS_FILE" : "/home/babuge/develop/TickerLite/build/ubuntu22_04-Debug/CMakeFiles/TickerLite_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/babuge/develop/TickerLite/src/databasehelper.cpp", "MU", null ],
 		[ "/home/babuge/develop/TickerLite/src/httphelper.cpp", "MU", null ],
 		[ "/home/babuge/develop/TickerLite/src/main.cpp", "MU", null ],
 		[ "/home/babuge/develop/TickerLite/src/mainwindow.cpp", "MU", null ],
