@@ -645,7 +645,7 @@ void MainWindow::PrivateDatas::Update(double timestamp, double price)
 }
 bool MainWindow::PrivateDatas::HasTimestamp(double timestamp)
 {
-    QReadLocker wLock(&lock);
+    QReadLocker rLock(&lock);
     auto item = std::find_if(timestamps.cbegin(), timestamps.cend(), [timestamp](const double &a){
         return (a == timestamp);
     });
