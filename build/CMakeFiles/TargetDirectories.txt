@@ -1,5 +1,0 @@
-/home/babuge/develop/TickerLite/build/CMakeFiles/TickerLite.dir
-/home/babuge/develop/TickerLite/build/CMakeFiles/edit_cache.dir
-/home/babuge/develop/TickerLite/build/CMakeFiles/rebuild_cache.dir
-/home/babuge/develop/TickerLite/build/CMakeFiles/TickerLite_autogen_timestamp_deps.dir
-/home/babuge/develop/TickerLite/build/CMakeFiles/TickerLite_autogen.dir
