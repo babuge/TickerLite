@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+dde6262a4f5913e80e8a5a3084a2c3da CMakeFiles/TickerLite_autogen
+dde6262a4f5913e80e8a5a3084a2c3da CMakeFiles/TickerLite_autogen_timestamp_deps
+e40458ea3749220539753822004e4279 TickerLite_autogen/timestamp
+6186b9e148965927df77ea20673493bb qrc_resources.cpp
